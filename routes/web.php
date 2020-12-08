@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('timers/index');
+Route::get('/timers', function () {
+    return view('timers.index');
 });
 
 Auth::routes();
