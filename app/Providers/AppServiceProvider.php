@@ -31,8 +31,8 @@ class AppServiceProvider extends ServiceProvider
                 \Log::info("Query Time:{$query->time}s] $query->sql");
             });
         }
-        if ($this->app->environment() == 'production') {
-            URL::forceScheme('https');
+        if (\App::environment('production')) {
+            \URL::forceScheme('https');
         }
 
         Schema::defaultStringLength(191);

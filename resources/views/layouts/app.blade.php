@@ -19,9 +19,15 @@
 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animation.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/mypage.css') }}" rel="stylesheet">
+    @if(app('env') == 'production')
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/animation.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
+    @else
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/animation.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/mypage.css') }}" rel="stylesheet">
+    @endif
 
     <!-- Icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
