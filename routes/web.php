@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/timers', function () {
+Route::get('/', function () {
     return view('timers.index');
 });
 
