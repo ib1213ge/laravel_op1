@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('timers.index');
+    return view('timers/index');
 });
 
 Auth::routes();

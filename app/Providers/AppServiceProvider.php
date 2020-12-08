@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,8 +31,8 @@ class AppServiceProvider extends ServiceProvider
                 \Log::info("Query Time:{$query->time}s] $query->sql");
             });
         }
-        if (\App::environment('production')) {
-            \URL::forceScheme('https');
+        if ($this->app->environment() == 'production') {
+            URL::forceScheme('https');
         }
 
         Schema::defaultStringLength(191);
