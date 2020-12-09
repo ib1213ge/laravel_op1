@@ -29,7 +29,9 @@ class TimersController extends Controller
         $timer = $request->all();
 
         if($request->picture !== null) {
-            $path = $request->file('picture')->store('public/img');
+            $file = $request->file('picture');
+            $path = Storage::disk('s3')->put('/timer_images',$file, 'public');
+            //$path = $request->file('picture')->store('public/img');
             $timer['picture'] = basename($path);
         }elseif($request->edit_flg !== ''){
             $timer['picture'] = basename($request->edit_flg);
