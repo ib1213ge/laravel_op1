@@ -105,7 +105,7 @@
 
             // 画像があったら表示する
             if(this.timer.picture) {
-                this.timer.picture = 'https://181417690029.signin.aws.amazon.com/console/' + this.timer.picture
+                this.timer.picture = this.timer.picture
             }else{
                 this.timer.picture = false
             }

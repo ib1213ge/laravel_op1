@@ -29,7 +29,7 @@ class TimersController extends Controller
 
         if($request->picture !== null) {
             $file = $request->file('picture');
-            $path = Storage::disk('s3')->putFile('/',$file, 'public');
+            $path = Storage::disk('s3')->putFile('myprefix', $file, 'public');
             //$path = $request->file('picture')->store('public/img');
             $timer['picture'] = Storage::disk('s3')->url($path);
         }elseif($request->edit_flg !== ''){
@@ -66,8 +66,8 @@ class TimersController extends Controller
                 //$path = $request->file('picture')->store('public/img');
                 //$timer->picture = basename($path);
                 $file = $request->file('picture');
-                $path = Storage::disk('s3')->putFile('/',$file, 'public');
-                $timer->picture = $path;
+                $path = Storage::disk('s3')->putFile('myprefix',$file, 'public');
+                $timer->picture = Storage::disk('s3')->url($path);
             }
 
             $timer->user_id = Auth::id();
@@ -105,8 +105,8 @@ class TimersController extends Controller
 
         if($request->picture !== null) {
             $file = $request->file('picture');
-            $path = Storage::disk('s3')->putFile('/',$file, 'public');
-            $timer->picture = $path;
+            $path = Storage::disk('s3')->putFile('myprefix',$file, 'public');
+            $timer->picture = Storage::disk('s3')->url($path);
             //$path = $request->file('picture')->store('public/img');
             //$timer->picture = basename($path);
         }elseif($request->edit_flg == ''){
