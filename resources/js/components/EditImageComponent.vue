@@ -21,7 +21,7 @@
        },
        mounted() {
             if(this.edit_picture) {
-                this.editImg = this.edit_picture;
+                this.editImg = 'https://181417690029.signin.aws.amazon.com/console/' + this.edit_picture;
             }else{
                 this.editImg = '';
             }

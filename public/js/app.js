@@ -1930,7 +1930,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     if (this.edit_picture) {
-      this.editImg = this.edit_picture;
+      this.editImg = 'https://181417690029.signin.aws.amazon.com/console/' + this.edit_picture;
     } else {
       this.editImg = '';
     }
@@ -2158,7 +2158,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
     if (this.timer.picture) {
-      this.timer.picture = this.timer.picture;
+      this.timer.picture = 'https://181417690029.signin.aws.amazon.com/console/' + this.timer.picture;
     } else {
       this.timer.picture = false;
     } // タイマー設定用
