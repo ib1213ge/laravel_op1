@@ -28,7 +28,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/timers/{id}','TimersController@update')->name('timers.update');
     Route::post('/timers/{id}/delete','TimersController@destroy')->name('timers.delete');
     Route::post('/mypage','TimersController@clear')->name('timers.reset');
-
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

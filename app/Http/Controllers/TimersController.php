@@ -20,7 +20,6 @@ class TimersController extends Controller
     {
         $timers = Auth::user()->timers()->get();
         //dd($timers);
-
         return view('timers.mypage', compact('timers'));
     }
 
@@ -30,9 +29,9 @@ class TimersController extends Controller
 
         if($request->picture !== null) {
             $file = $request->file('picture');
-            $path = Storage::disk('s3')->put('/timer_images',$file, 'public');
+            $path = Storage::disk('s3')->putFile('/',$file, 'public');
             //$path = $request->file('picture')->store('public/img');
-            $timer['picture'] = basename($path);
+            $timer['picture'] = Storage::disk('s3')->url($path);
         }elseif($request->edit_flg !== ''){
             $timer['picture'] = basename($request->edit_flg);
         }else{

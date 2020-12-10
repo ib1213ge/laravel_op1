@@ -103,12 +103,7 @@
                 this.darkFlg = false
             }
 
-            // 画像があったら表示する
-            if(this.timer.picture) {
-                this.timer.picture = '/storage/img/' + this.timer.picture
-            }else{
-                this.timer.picture = false
-            }
+          
 
             // タイマー設定用
             this.timerMin = this.timer.min
