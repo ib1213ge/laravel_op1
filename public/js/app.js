@@ -2154,6 +2154,13 @@ __webpack_require__.r(__webpack_exports__);
       this.darkFlg = true;
     } else {
       this.darkFlg = false;
+    } // 画像があったら表示する
+
+
+    if (this.timer.picture) {
+      this.timer.picture = this.timer.picture;
+    } else {
+      this.timer.picture = false;
     } // タイマー設定用
 
 

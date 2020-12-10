@@ -103,9 +103,10 @@
                 this.darkFlg = false
             }
 
-            // 画像
-            if((this.timer.picture) == null) {
-
+            // 画像があったら表示する
+            if(this.timer.picture) {
+                this.timer.picture = this.timer.picture
+            }else{
                 this.timer.picture = false
             }
 
