@@ -103,7 +103,11 @@
                 this.darkFlg = false
             }
 
-          
+            // 画像
+            if((this.timer.picture) == null) {
+
+                this.timer.picture = false
+            }
 
             // タイマー設定用
             this.timerMin = this.timer.min
