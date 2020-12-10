@@ -1930,7 +1930,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     if (this.edit_picture) {
-      this.editImg = '/storage/img/' + this.edit_picture;
+      this.editImg = this.edit_picture;
     } else {
       this.editImg = '';
     }
