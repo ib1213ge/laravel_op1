@@ -146,6 +146,8 @@ return [
     */
 
     'attributes' => [
+        "name" => "名前",
+        "password_confirmation" => "パスワード(確認用)",
         'email' => 'メールアドレス',
         'password' => 'パスワード',
         'min' => '時間',
