@@ -104,7 +104,7 @@
             }
 
             // 画像がなかったらfalseを入れる
-            if((this.timer.picture) == NULL){
+            if(!(this.timer.picture)){
                 this.timer.picture = false
             }
 
@@ -189,6 +189,7 @@
 </script>
 
 <style scoped>
+
 .main {
     height: 600px;
 }
@@ -235,6 +236,131 @@
 }
 .btn-alarm {
     background-color: #A0DC32;
+}
+
+.is-icon-anime {
+    animation: iconMoveAnimation 3s infinite ease-in-out both;
+    -moz-animation: iconMoveAnimation 3s infinite ease-in-out both; /* Firefox */
+    -webkit-animation: iconMoveAnimation 3s infinite ease-in-out both; /* Safari and Chrome */
+}
+@keyframes iconMoveAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(280px);
+        opacity: 0;
+    }
+}
+@-moz-keyframes iconMoveAnimation { /* Firefox */
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(280px);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes iconMoveAnimation { /* Safari and Chrome */
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(280px);
+        opacity: 0;
+    }
+}
+.is-top-color {
+    animation: lowMoveAnimation linear both;
+    -moz-animation: lowMoveAnimation linear both;
+    -webkit-animation: lowMoveAnimation linear both;
+}
+.is-top-paused {
+    animation: lowMoveAnimation linear both paused;
+    -moz-animation: lowMoveAnimation linear both paused;
+    -webkit-animation: lowMoveAnimation linear both paused;
+
+}
+.is-top-reset {
+    animation: '';
+    -moz-animation: '';
+    -webkit-animation: '';
+
+}
+@keyframes lowMoveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(280px);
+    }
+}
+@-moz-keyframes lowMoveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(280px);
+    }
+}
+@-webkit-keyframes lowMoveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(280px);
+    }
+}
+.is-bottom-color {
+    animation: highMoveAnimation linear backwards;
+    -moz-animation: highMoveAnimation linear backwards;
+    -webkit-animation: highMoveAnimation linear backwards;
+}
+.is-bottom-paused {
+    animation: highMoveAnimation linear backwards paused;
+    -moz-animation: highMoveAnimation linear backwards paused;
+    -webkit-animation: highMoveAnimation linear backwards paused;
+}
+.is-bottom-reset {
+    animation: '';
+    -moz-animation: '';
+    -webkit-animation: '';
+}
+@keyframes highMoveAnimation {
+    0% {
+        transform: translateY(280px)
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@-moz-keyframes highMoveAnimation {
+    0% {
+        transform: translateY(280px)
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@-webkit-keyframes highMoveAnimation {
+    0% {
+        transform: translateY(280px)
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 </style>
