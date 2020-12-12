@@ -103,10 +103,8 @@
                 this.darkFlg = false
             }
 
-            // 画像があったら表示する
-            if(this.timer.picture) {
-                this.timer.picture = this.timer.picture
-            }else{
+            // 画像がなかったらfalseを入れる
+            if((this.timer.picture) == NULL){
                 this.timer.picture = false
             }
 
@@ -123,11 +121,13 @@
         },
         methods: {
             timerStart: function() {
+                // スタートボタン押された時
                 this.timerFlg = true
                 this.isReset = false
                 this.countTimer()
             },
             timerStop: function() {
+                // ストップボタン押された時
                 this.timerFlg = false
                 window.clearInterval(this.timerObj)
             },

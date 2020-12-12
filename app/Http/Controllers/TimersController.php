@@ -19,7 +19,7 @@ class TimersController extends Controller
     public function mypage()
     {
         $timers = Auth::user()->timers()->get();
-        //dd($timers);
+
         return view('timers.mypage', compact('timers'));
     }
 
@@ -37,7 +37,6 @@ class TimersController extends Controller
         }else{
             $timer['picture']= '';
         }
-        //dd($timer);
 
         return view('timers.timer', compact('timer'));
     }
@@ -90,7 +89,7 @@ class TimersController extends Controller
 
         $timers = Auth::user()->timers()->get();
         $edit = Auth::user()->timers()->find($id);
-        //dd($edit);
+
         return view('timers.edit', ['timers' => $timers, 'edit' => $edit]);
     }
 
@@ -114,7 +113,6 @@ class TimersController extends Controller
         }else{
             $timer->picture = $timer->picture;
         }
-        //dd($timer->picture);
 
         $timer->title = $request->title;
         $timer->min = $request->min;
@@ -133,12 +131,8 @@ class TimersController extends Controller
             return redirect('/mypage')->with('flash_message', __('Invalid operation was performed.'));
         }
 
-//        $drill = Drill::find($id)
         $timer = Auth::user()->timers()->find($id);
         $timer->delete();
-
-        // こう書いた方がスマート
-//        Drill::find($id)->delete();
 
         return redirect('/mypage');
     }

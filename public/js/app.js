@@ -2016,6 +2016,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     resetSelectImg: function resetSelectImg() {
+      // 画像リセット
       var input = this.$refs.file;
       input.type = 'text';
       input.type = 'file';
@@ -2154,12 +2155,10 @@ __webpack_require__.r(__webpack_exports__);
       this.darkFlg = true;
     } else {
       this.darkFlg = false;
-    } // 画像があったら表示する
+    } // 画像がなかったらfalseを入れる
 
 
-    if (this.timer.picture) {
-      this.timer.picture = this.timer.picture;
-    } else {
+    if (this.timer.picture == NULL) {
       this.timer.picture = false;
     } // タイマー設定用
 
@@ -2174,11 +2173,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     timerStart: function timerStart() {
+      // スタートボタン押された時
       this.timerFlg = true;
       this.isReset = false;
       this.countTimer();
     },
     timerStop: function timerStop() {
+      // ストップボタン押された時
       this.timerFlg = false;
       window.clearInterval(this.timerObj);
     },

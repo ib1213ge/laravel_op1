@@ -30,6 +30,7 @@
             }
           },
           resetSelectImg: function() {
+              // 画像リセット
               const input = this.$refs.file;
               input.type = 'text';
               input.type = 'file';
